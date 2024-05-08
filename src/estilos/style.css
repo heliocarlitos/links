@@ -1,0 +1,770 @@
+@import url(responsividade.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cor-branca: #fff;
+    --cor-branca-a: #cecece;
+    --cor-branca-b: #ffffff99;
+    --cor-branca-c: #dbdbdb;
+    --cor-branca-d: #b8b8b8;
+    --cor-preta: #000;
+    --cor-preta-a: #181818;
+    --cor-preta-b: #424141;
+    --cor-preta-c: #706763;
+    --cor-preta-d: #6f6f6fae;
+    --cor-preta-hover: #0b0b0b;
+    --cor-verde-a: #03e881;
+    --cor-verde-b: #00693a;
+    --cor-vermelha-b: #a00000;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/src/inter-webfont/Inter-Regular.woff') format('truetype');
+}
+@font-face {
+    font-family: 'Inter-bold';
+    src: url('/src/inter-webfont/Inter-ExtraBold.woff') format('truetype');
+}
+::-webkit-scrollbar{
+    background-color: var(--cor-preta);
+    width: 10px;
+    border-radius: 100px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--cor-branca-c);
+    width: 10px;
+    border-radius: 100px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    background-color: var(--cor-preta-a);
+    color: var(--cor-branca);
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+}
+.Informacaes {
+    margin-top: 5px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 2;
+}
+.IconDeInfo {
+    background-color: var(--cor-preta-c);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    transition: .3s ease;
+    cursor: pointer;
+    position: relative;
+    
+    &:hover {
+        background-color: #424141;
+    }
+    &:hover::before {
+        display: block;
+    }
+}
+.Novidades::before {
+    position: absolute;
+    content: "Novidades";
+    color: var(--cor-branca);
+    font-size: .6em;
+    background-color: var(--cor-preta);
+    padding: 3px 5px;
+    border-radius: 3px;
+    animation: MostrandoNovidades 0.3s ease;
+    display: none;
+    margin-bottom: 50px;
+    margin-right: 5px;
+
+}
+.IconDeInfoBola::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--cor-verde-a);
+    border-radius: 100px;
+    margin-top: -20px;
+    margin-left: 30px;
+}
+
+.Notificacaoes {
+    position: absolute;
+    background: var(--cor-branca);
+    color: var(--cor-preta);
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+.TituloNotific {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;   
+}
+.NotificAqui {
+    overflow-y: auto;
+    max-height: 100px;
+}
+.NotificAqui::-webkit-scrollbar{
+    background-color: var(--cor-branca-a);
+    width: 8px;
+    border-radius: 5px;
+}
+.NotificAqui::-webkit-scrollbar-thumb{
+    background-color: var(--cor-preta);
+    width: 8px;
+    border-radius: 5px;
+}
+.FecharAsNotific {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: var(--cor-branca-c);
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--cor-vermelha-b);
+        color: var(--cor-branca);
+        box-shadow: 3px 3px 3px #00000093;
+
+    }
+}
+.SemNotific {
+    display: none;
+    font-size: .8em;
+}
+.ActNot {
+    font-size: .8em;
+    text-align: justify;
+    padding: 5px;
+    background-color: var(--cor-verde-a);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 90px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s;
+    border-radius: 4px;
+    &:hover {
+        background-color: var(--cor-verde-b);
+        color: var(--cor-branca);
+    }
+}
+.Notfic {
+    font-size: .8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+}
+.NotficNova a::after {
+    position: absolute;
+    content: "Nova";
+    padding: 3px 5px;
+    color: var(--cor-preta-hover);
+    font-size: .7em;
+    background-color: #03e8818c;
+    margin-top: -14px;
+    margin-left: -15px;
+    border-radius: 100px;
+}
+.Notfic a {
+    text-decoration: none;
+    background-color: var(--cor-branca-a);
+    color: var(--cor-preta);
+    padding: 5px;
+    border-radius: 4px;
+    transition: .3s ease;
+
+    &:hover{
+        color: var(--cor-preta-b);
+        font-weight: bold;
+        box-shadow: 3px 3px 3px #00000093;
+
+    }
+}
+.FecharNotific {
+    background-color: var(--cor-branca-a);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: .3s ease;
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--cor-preta-a);
+        color: var(--cor-branca);
+        box-shadow: 3px 3px 3px #00000093;
+    }
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.FotoDePerfil {
+    overflow: hidden;
+    border: 3px solid var(--cor-branca-c);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.FotoDePerfil img{
+    width: 100px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .3s ease;
+    position: relative;
+
+    &:hover {
+        transform: scale(120%);
+    }
+}
+.NomeCompleto {
+    margin: 15px 0 5px 0;
+    font-size: 1.2em;
+    font-family: 'Inter-bold', sans-serif;
+    letter-spacing: -1px;
+}
+.Descricao {
+    width: 100%;
+    max-width: 500px;
+    font-weight: 600;
+    color: var(--cor-branca-d);
+    letter-spacing: .5px;
+    line-height: 30px;
+}
+.SeccaoDeLink {
+    width: 100%;
+    max-width: 630px;
+    height: 100%;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    overflow-y: auto;
+    padding: 50px 0; /* SE TIVER MAIS DE 4 LINKS MUDAR ISSO PARA padding-top: 90PX;*/
+    padding-right: 10px;
+}
+.SeccaoDeLink::-webkit-scrollbar{
+    background-color: var(--cor-branca-c);
+    width: 8px;
+    border-radius: 100px;
+}
+.SeccaoDeLink::-webkit-scrollbar-thumb{
+    background-color: var(--cor-preta-d);
+    width: 8px;
+    border-radius: 100px;
+}
+.SeccaoDeLink .BarraDeLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 10px;
+    background-color: var(--cor-preta);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    transition: .3s ease;
+    margin: 6px 0;
+
+    &:hover{
+        box-shadow: 10px 10px 8px #0000006c;
+        transform: scale(102%);
+        background-color: var(--cor-preta-hover);
+    }
+}
+.SeccaoDeLink .BarraDeLinks .IconLink {
+    background-color: var(--cor-branca-c);
+    color: var(--cor-preta);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 3px;
+}
+.SeccaoDeLink .BarraDeLinks .Link {
+    width: 100%;
+    text-decoration: none;
+    color: var(--cor-branca);
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 20px 0;
+
+    &:hover {
+        color: var(--cor-verde-a);
+    }
+}
+.SeccaoDeLink .BarraDeLinks .Opcaoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: .3s;
+
+    &:hover {
+        background-color: var(--cor-preta-c);
+    }
+}
+.main .RedesSociais {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+.main .RedesSociais a {
+    display: block;
+    text-decoration: none;
+    color: var(--cor-branca);
+    transition: .3s;
+    position: relative;
+    z-index: 99;
+
+    &:hover {
+        transform: scale(110%);
+        color: var(--cor-verde-a);
+    }
+    &:hover::after {
+        display: block;
+    }
+    &:hover::before {
+        display: block;
+    }
+}
+.Github-Descricao::after{
+    display: none;
+    position: absolute;
+    content: 'GitHub';
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+    padding:3px;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    font-size: .6em;
+    margin-top: -27px;
+    margin-left: -5px;
+    transition: .3s;
+    z-index: 0;
+}
+.Github-Descricao::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--cor-branca);
+    top:0;
+    margin-top: -13px !important;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+.Linkedin-Descricao::after{
+    display: none;
+    position: absolute;
+    content: 'LinkedIn';
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+    padding:3px;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    font-size: .6em;
+    margin-top: -27px;
+    margin-left: -7px;
+    transition: .3s;
+    z-index: 0;
+}
+.Linkedin-Descricao::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--cor-branca);
+    top:0;
+    margin-top: -13px !important;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+.Instagram-Descricao::after{
+    display: none;
+    position: absolute;
+    content: 'Instagram';
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+    padding:3px;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    font-size: .6em;
+    margin-top: -27px;
+    margin-left: -10px;
+    transition: .3s;
+    z-index: 0;
+}
+.Instagram-Descricao::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--cor-branca);
+    top:0;
+    margin-top: -13px !important;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+.Facebook-Descricao::after{
+    display: none;
+    position: absolute;
+    content: 'Facebook';
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+    padding:3px;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    font-size: .6em;
+    margin-top: -27px;
+    margin-left: -10px;
+    transition: .3s;
+    z-index: 0;
+}
+.Facebook-Descricao::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--cor-branca);
+    top:0;
+    margin-top: -13px !important;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+.Whatsapp-Descricao::after{
+    display: none;
+    position: absolute;
+    content: 'WhatsApp';
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+    padding:3px;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    font-size: .6em;
+    margin-top: -27px;
+    margin-left: -11px;
+    transition: .3s;
+    z-index: 0;
+}
+.Whatsapp-Descricao::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--cor-branca);
+    top:0;
+    margin-top: -13px !important;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+
+
+
+.VendoFotoDePerfil{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #000000af;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+}
+.FecharFoto {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 550px;
+    margin: 10px;
+    z-index: 1;
+}
+.FecharFoto svg {
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+    height: 20px;
+    width: 20px;
+    padding: 4px;
+    border-radius:7px;
+    cursor: pointer;
+    transition: .3s ease;
+
+    &:hover {
+        background-color: var(--cor-preta-b);
+        color: var(--cor-branca);
+    }
+}
+.AFotoDePerfil {
+    margin: 0 20px;
+}
+.AFotoDePerfil img{
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+}
+
+
+.MenuTresPontos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #000000af;
+    display: none;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+}
+.OsPontos {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-preta-a);
+    width: 100%;
+    max-width: 490px;
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+}
+.HeaderMenuTresPontos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.FecharMenuTresPontos {
+    background-color: var(--cor-preta-b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border-radius: 5px;
+    transition: .3s ease;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--cor-preta-c);
+    }
+}
+.Ponto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.IconPonto {
+    padding: 30px;
+    background-color: var(--cor-preta-b);
+    border-radius: 100px;
+    animation: Pulsando 1200ms infinite
+}
+.DetalhesPonto{
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+}
+.TituloPonto {
+    width: 100%;
+    max-width: 300px;
+    height: 16px;
+    border-radius: 100px;
+    background-color: var(--cor-preta-b);
+    margin-bottom: 10px;
+    animation: Pulsando 1200ms infinite
+}
+.DescricaoPonto {
+    width: 100%;
+    max-width: 160px;
+    height: 13px;
+    border-radius: 100px;
+    background-color: var(--cor-preta-b);
+    animation: Pulsando 1200ms infinite
+}
+
+.AvisoDeCookie {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+    padding: 20px 0;
+    border-radius: 20px 20px 0 0;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    animation-duration: 0.5s; /* Duração da animação */
+    flex-wrap: wrap;
+}
+.AvisoDeCookie .TextoDoCookie {
+    width: 700px;
+    font-size: .9em;
+    color: var(--cor-preta-hover);
+}
+.AvisoDeCookie .BtnCookies {
+    margin: 10px;
+}
+.AvisoDeCookie .BtnCookies button{
+    border: 0;
+    padding: 10px;
+    border-radius: 100px;
+    margin: 5px;
+    color: var(--cor-preta);
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.AvisoDeCookie .BtnCookies .Aceitar {
+    background-color: var(--cor-verde-a);
+    transition: .3s ease;
+    &:hover{
+        background-color: var(--cor-verde-b);
+        color: var(--cor-branca);
+    }
+}
+.AvisoDeCookie .BtnCookies .Rejeitar{
+    border: 1px solid;
+    transition: .3s ease;
+
+    &:hover{
+        border: 1px solid var(--cor-vermelha-b);
+        background-color: var(--cor-vermelha-b);
+        color: var(--cor-branca);
+    }
+}
+
+.RodaPe {
+    display: flex;
+    justify-content: center;
+    font-size: .8em;
+    flex-wrap: wrap;
+}
+.RodaPe div {
+    margin: 5px;
+}
+.LinksDoRodaPe a{
+    text-decoration: none;
+    color: var(--cor-verde-a);
+    letter-spacing: 1.1px;
+    font-weight: bold;
+    position: relative;
+
+    &:hover::after{
+        width: 100%;
+    }
+}
+.LinksDoRodaPe a::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: var(--cor-verde-a);
+    width: 0;
+    bottom: 0;
+    left: 0;
+    transition: .3s;
+}
+
+@keyframes MostrandoNovidades {
+    0% {
+        margin-bottom: 30px;
+        font-size: .4em;
+    } 
+}
+@keyframes Pulsando {
+    to {
+        opacity: 1;
+    }
+    from {
+        opacity: 50%;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes slideOutToBottom {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.slideIn {
+    display: flex;
+    animation-name: slideInFromBottom;
+}
+.slideOut {
+    animation-name: slideOutToBottom;
+}

@@ -1,0 +1,6 @@
+@import url(style.css);
+@media screen and (max-width: 300px){
+    .Ponto {
+        flex-direction: column;
+    }
+}
