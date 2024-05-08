@@ -653,13 +653,14 @@ body {
     position: fixed;
     background-color: var(--cor-branca);
     color: var(--cor-preta);
-    padding: 20px 0;
+    padding: 20px;
     border-radius: 20px 20px 0 0;
     display: none;
     justify-content: space-evenly;
     align-items: center;
     animation-duration: 0.5s; /* Duração da animação */
     flex-wrap: wrap;
+    z-index: 99999;
 }
 .AvisoDeCookie .TextoDoCookie {
     width: 700px;
