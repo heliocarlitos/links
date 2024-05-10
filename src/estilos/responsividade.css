@@ -1,6 +1,15 @@
 @import url(style.css);
+@media screen and (max-width: 465px) {
+    .CardAbertoFull {
+        padding: 500px 0 !important;
+        overflow-y: auto !important;
+    }
+}
 @media screen and (max-width: 300px){
     .Ponto {
         flex-direction: column;
+    }
+    .BtnFechar {
+        margin: 10px 30px !important;
     }
 }
