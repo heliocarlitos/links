@@ -36,3 +36,32 @@ function VerMenuTresPontos() {
 function FecharMenuTresPontos() {
     document.getElementById("MenuTresPontos").style.display = "none";
 }
+
+// JS PARA MOSTRAR O SIS. WINDOWS
+function MostrarSistemasWindows() {
+    document.getElementById("SistemasWindows").style.display = "flex";
+}
+function FecharSistemasWindows() {
+    document.getElementById("SistemasWindows").style.display = "none";
+}
+// JS PARA MOSTRAR O SIS. ANDROID
+function MostrarSistemasAndroid() {
+    document.getElementById("SistemasAndroid").style.display = "flex";
+}
+function FecharSistemasAndroid() {
+    document.getElementById("SistemasAndroid").style.display = "none";
+}
+// JS PARA MOSTRAR PROGRAMAS ÚTEIS
+function MostrarProgramasUteis() {
+    document.getElementById("ProgramasUteis").style.display = "flex";
+}
+function FecharProgramasUteis() {
+    document.getElementById("ProgramasUteis").style.display = "none";
+}
+// JS PARA MOSTRAR APLICATIVOS ÚTEIS
+function MostrarAplicativosUteis() {
+    document.getElementById("AplicativosUteis").style.display = "flex";
+}
+function FecharAplicativosUteis() {
+    document.getElementById("AplicativosUteis").style.display = "none";
+}
