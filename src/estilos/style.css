@@ -45,6 +45,10 @@ body {
     font-size: 1em;
     background-color: var(--cor-preta-a);
     color: var(--cor-branca);
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 .main {
     display: flex;
