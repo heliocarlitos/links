@@ -1,8 +1,27 @@
 @import url(style.css);
+@media screen and (max-width: 600px) {
+    .MeusCards .OsCards {
+        justify-content: center;
+    }
+    .MeusCards .OsCards .Card {
+        max-width: 237px !important;
+        flex-wrap: nowrap !important;
+    }
+}
+@media screen and (max-width: 554px) {
+    .MeusCards .OsCards .Card {
+        max-width: 170px !important;
+    }
+}
 @media screen and (max-width: 465px) {
     .CardAbertoFull {
         padding: 500px 0 !important;
         overflow-y: auto !important;
+    }
+}
+@media screen and (max-width: 554px) {
+    .MeusCards .OsCards .Card {
+        max-width: 340px !important;
     }
 }
 @media screen and (max-width: 300px){
