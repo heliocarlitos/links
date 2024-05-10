@@ -65,3 +65,10 @@ function MostrarAplicativosUteis() {
 function FecharAplicativosUteis() {
     document.getElementById("AplicativosUteis").style.display = "none";
 }
+ // JS PARA ADICIONAR ANO ACTUAL NO RODAPE
+function atualizarAnoAtual() {
+    let elementoAnoAtual = document.getElementById("AnoAtual");
+    let anoAtual = new Date().getFullYear();
+    elementoAnoAtual.textContent = anoAtual;
+}
+atualizarAnoAtual();
