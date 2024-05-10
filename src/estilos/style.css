@@ -16,6 +16,7 @@
     --cor-preta-b: #424141;
     --cor-preta-c: #706763;
     --cor-preta-d: #6f6f6fae;
+    --cor-preta-transparent: #000000ba;
     --cor-preta-hover: #0b0b0b;
     --cor-verde-a: #03e881;
     --cor-verde-b: #00693a;
@@ -280,7 +281,7 @@ body {
     flex-direction: column;
     margin: 10px 0 0 0;
     overflow-y: auto;
-    padding: 50px 0; /* SE TIVER MAIS DE 4 LINKS MUDAR ISSO PARA padding-top: 90PX;*/
+    padding: 10px 0; /* SE TIVER MAIS DE 4 LINKS MUDAR ISSO PARA padding-top: 90PX;*/
     padding-right: 10px;
 }
 .SeccaoDeLink::-webkit-scrollbar{
@@ -344,6 +345,47 @@ body {
     &:hover {
         background-color: var(--cor-preta-c);
     }
+}
+.MeusCards {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.MeusCards .TituloDaSeccaoCard {
+    padding-bottom: 10px;
+}
+.MeusCards .OsCards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 700px;
+}
+.MeusCards .OsCards .Card {
+    background-color: var(--cor-preta-hover);
+    margin: 5px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+    height: 95px;
+    width: 100%;
+    max-width: 160px;
+
+    &:hover{
+        box-shadow: 0px 0px 10px #0000006c;
+        transform: scale(105%) ;
+        background-color: var(--cor-preta);
+    }
+}
+.MeusCards .OsCards .Card .TituloCard {
+    color: var(--cor-verde-a);
+    margin-bottom: 10px;
+}
+.MeusCards .OsCards .Card .CardDescricao {
+    color: var(--cor-branca-a);
+    font-size: .9em;
 }
 .main .RedesSociais {
     width: 100%;
@@ -519,6 +561,101 @@ body {
 }
 
 
+.CardAberto {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 100vh;
+    background-color: var(--cor-preta-transparent);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 10px;
+}
+.BtnFechar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 50px;
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        background-color: var(--cor-preta-c);
+        color: var(--cor-branca);
+    }
+}
+.CardAberto .TituloCardAberto {
+    margin-bottom: 20px;
+}
+.CardAberto .TodosOsCards {
+    width: 100%;
+    max-width: 1120px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.CardAberto .TodosOsCards a {
+    text-decoration: none;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 5px;
+    border-radius: 10px;
+    width: 210px;
+    min-width: 10px;
+    height: 80px;
+    background-color: var(--cor-preta-a);
+    transition: .3s ease;
+
+    &:hover{
+        box-shadow: 0px 0px 10px #0000006c;
+        transform: scale(105%) ;
+        background-color: var(--cor-verde-b);
+    }
+    &:hover .ttoc{
+        color: var(--cor-branca);
+    }
+    &:hover .TcoDescricao{
+        color: var(--cor-branca-a);
+    }
+    &:active{
+        background-color: var(--cor-preta-b);
+        transition: 0s;
+    }
+}
+
+.CardAberto .TodosOsCards a .ttoc {
+    margin-bottom: 5px;
+    color: var(--cor-verde-a);
+}
+.CardAberto .TodosOsCards a .TcoDescricao {
+    font-size: .9em;
+    color: var(--cor-preta-c);
+    text-align: center;
+}
+.SistemasWindows, .SistemasAndroid, .ProgramasUteis,
+.AplicativosUteis {
+    display: none;
+}
+
+
 
 .VendoFotoDePerfil{
     position: fixed;
@@ -621,7 +758,7 @@ body {
     padding: 30px;
     background-color: var(--cor-preta-b);
     border-radius: 100px;
-    animation: Pulsando 1200ms infinite
+    animation: Pulsando 1200ms infinite alternate;
 }
 .DetalhesPonto{
     width: 100%;
@@ -635,7 +772,7 @@ body {
     border-radius: 100px;
     background-color: var(--cor-preta-b);
     margin-bottom: 10px;
-    animation: Pulsando 1200ms infinite
+    animation: Pulsando 1200ms infinite alternate
 }
 .DescricaoPonto {
     width: 100%;
@@ -643,7 +780,7 @@ body {
     height: 13px;
     border-radius: 100px;
     background-color: var(--cor-preta-b);
-    animation: Pulsando 1200ms infinite
+    animation: Pulsando 1200ms infinite alternate;
 }
 
 .AvisoDeCookie {
@@ -707,6 +844,7 @@ body {
     justify-content: center;
     font-size: .8em;
     flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 .RodaPe div {
     margin: 5px;
