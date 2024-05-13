@@ -15,7 +15,7 @@
 }
 @media screen and (max-width: 465px) {
     .CardAbertoFull {
-        padding: 500px 0 !important;
+       /*  padding: 500px 0 !important; */
         overflow-y: auto !important;
     }
 }
