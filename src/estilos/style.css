@@ -212,9 +212,7 @@ body {
 
     &:hover{
         color: var(--cor-preta-b);
-        font-weight: bold;
         box-shadow: 3px 3px 3px #00000093;
-
     }
 }
 .FecharNotific {
