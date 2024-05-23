@@ -15,4 +15,4 @@ Recolher feedback e sugestões para aprimorar a funcionalidade e usabilidade ant
 
 ### Contribuição
 
-Comentários, sugestões e contribuições são bem-vindos! Por favor, deixe o seu feedback nas issues.
+Comentários, sugestões e contribuições são bem-vindos! Por favor, deixe o seu feedback nas issues ou um fork.
